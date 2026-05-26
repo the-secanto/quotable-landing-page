@@ -36,8 +36,8 @@ dist-ssr
 *.sw?
 .env
 
-
 *.md
+!README.md
 *.txt
 
 docs
