@@ -89,8 +89,7 @@ export function LandingPage() {
         <div className="max-w-5xl mx-auto px-6 pb-20">
           <div className="rounded-2xl overflow-hidden border border-[#27272a] shadow-xl bg-white/5 aspect-video flex items-center justify-center">
             <div className="text-center p-8">
-               <p className="text-[#a1a1aa] mb-2 font-serif italic text-xl">Overlay Preview</p>
-               <p className="text-[#a1a1aa]/60 text-sm">Replace this with your Quotable-hero.jpg screenshot</p>
+               <img src="src\overlay.png" alt="" />
             </div>
           </div>
         </div>
@@ -129,8 +128,7 @@ export function LandingPage() {
           </div>
           <div className="rounded-2xl overflow-hidden border border-[#27272a] shadow-xl bg-white/5 aspect-square flex items-center justify-center">
             <div className="text-center p-8">
-               <p className="text-[#a1a1aa] mb-2 font-serif italic text-xl">Dashboard Preview</p>
-               <p className="text-[#a1a1aa]/60 text-sm">Replace this with your Quotable-dashboard.jpg screenshot</p>
+              <img src="src\dashboard.png" alt="" />
             </div>
           </div>
         </div>
@@ -141,8 +139,7 @@ export function LandingPage() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="rounded-2xl overflow-hidden border border-[#27272a] shadow-xl bg-white/5 aspect-square flex items-center justify-center md:order-1 order-2">
             <div className="text-center p-8">
-               <p className="text-[#a1a1aa] mb-2 font-serif italic text-xl">Themes Preview</p>
-               <p className="text-[#a1a1aa]/60 text-sm">Replace this with your Quotable-themes.jpg screenshot</p>
+               <img src="src\theme.png" alt="" />
             </div>
           </div>
           <div className="md:order-2 order-1">
