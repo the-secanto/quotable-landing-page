@@ -86,9 +86,7 @@ export function LandingPage() {
 
         <div className="max-w-5xl mx-auto px-6 pb-20">
           <div className="rounded-2xl overflow-hidden border border-[#27272a] shadow-xl bg-white/5 aspect-video flex items-center justify-center">
-            <div className="text-center p-8">
-               <img src="src\overlay.png" alt="" />
-            </div>
+            <img src="/overlay.png" alt="Overlay" className="w-full h-full object-contain" />
           </div>
         </div>
       </section>
@@ -125,9 +123,7 @@ export function LandingPage() {
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden border border-[#27272a] shadow-xl bg-white/5 aspect-square flex items-center justify-center">
-            <div className="text-center p-8">
-              <img src="src\dashboard.png" alt="" />
-            </div>
+            <img src="/dashboard.png" alt="Dashboard" className="w-full h-full object-contain" />
           </div>
         </div>
       </section>
@@ -136,9 +132,7 @@ export function LandingPage() {
       <section id="themes" className="py-24 border-t border-[#27272a]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="rounded-2xl overflow-hidden border border-[#27272a] shadow-xl bg-white/5 aspect-square flex items-center justify-center md:order-1 order-2">
-            <div className="text-center p-8">
-               <img src="src\theme.png" alt="" />
-            </div>
+            <img src="/theme.png" alt="Themes" className="w-full h-full object-contain" />
           </div>
           <div className="md:order-2 order-1">
             <p className="text-xs uppercase tracking-[0.3em] text-[#a1a1aa] mb-3">Themes</p>
