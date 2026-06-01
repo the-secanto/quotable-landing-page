@@ -1,11 +1,9 @@
 import { Apple, Download, Monitor, Terminal, Quote as QuoteIcon, Clock, Palette, Sparkles, Cloud, ArrowRight } from "lucide-react";
 
-const DOWNLOAD_BASE = "https://github.com/your-org/Quotable/releases/latest/download";
-
 const downloads = [
-  { os: "macOS", icon: Apple, file: "Quotable.dmg", note: "Universal · Apple Silicon & Intel" },
-  { os: "Windows", icon: Monitor, file: "Quotable-Setup.exe", note: "Windows 10 & 11 · x64" },
-  { os: "Linux", icon: Terminal, file: "Quotable.AppImage", note: "AppImage · x86_64" },
+  { os: "macOS", icon: Apple, file: "Quotable.dmg", note: "Universal · Apple Silicon & Intel", available: false, url: "" },
+  { os: "Windows", icon: Monitor, file: "Quotable-Setup.exe", note: "Windows 10 & 11 · x64", available: true, url: "https://github.com/the-secanto/quotable-dev/releases/download/v1.0.0/Quotable-Setup.exe" },
+  { os: "Linux", icon: Terminal, file: "Quotable.AppImage", note: "AppImage · x86_64", available: false, url: "" },
 ];
 
 const features = [
@@ -38,7 +36,7 @@ export function LandingPage() {
       <header className="sticky top-0 z-50 border-b border-[#27272a] bg-[#09090b]/70 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#7c3aed] to-[#a78bfa] shadow-[0_0_20px_rgba(124,58,237,0.3)]" />
+            <img src="/favicon.ico" alt="Quotable Logo" className="h-8 w-8 rounded-lg" />
             <span className="font-serif text-xl">Quotable</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-[#a1a1aa]">
@@ -170,16 +168,22 @@ export function LandingPage() {
             {downloads.map((d) => (
               <a
                 key={d.os}
-                href={`${DOWNLOAD_BASE}/${d.file}`}
-                className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 hover:border-[#7c3aed]/50 transition"
+                href={d.available ? d.url : undefined}
+                className={`group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 transition ${d.available ? "hover:border-[#7c3aed]/50" : "opacity-50 cursor-default"}`}
               >
                 <div className="flex items-center justify-between mb-4">
                   <d.icon className="h-7 w-7" />
-                  <Download className="h-4 w-4 text-[#a1a1aa] group-hover:text-[#7c3aed] transition" />
+                  {d.available ? (
+                    <Download className="h-4 w-4 text-[#a1a1aa] group-hover:text-[#7c3aed] transition" />
+                  ) : (
+                    <span className="text-xs text-[#a1a1aa]">Coming soon</span>
+                  )}
                 </div>
                 <div className="font-serif text-2xl mb-1">Download for {d.os}</div>
                 <p className="text-xs text-[#a1a1aa]">{d.note}</p>
-                <p className="mt-4 text-xs text-[#7c3aed] font-medium">{d.file}</p>
+                <p className="mt-4 text-xs text-[#7c3aed] font-medium break-all">
+                  {d.available ? (d.os === "Windows" ? d.url : d.file) : ""}
+                </p>
               </a>
             ))}
           </div>
@@ -190,7 +194,7 @@ export function LandingPage() {
       <footer className="border-t border-[#27272a] py-10">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4 text-sm text-[#a1a1aa]">
           <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-[#7c3aed] to-[#a78bfa]" />
+            <img src="/favicon.ico" alt="Quotable Logo" className="h-6 w-6 rounded-md" />
             <span className="font-serif text-base text-[#fafafa]">Quotable</span>
             <span>· Calm tech for what matters.</span>
           </div>
