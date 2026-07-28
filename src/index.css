@@ -39,3 +39,12 @@
     @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
